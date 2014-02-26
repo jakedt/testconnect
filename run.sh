@@ -1,0 +1,14 @@
+#! /bin/bash
+
+. "mustache.sh"
+
+ES_PORT_9300_TCP_PORT=${ES_PORT_9300_TCP_PORT:-9300}
+ES_PORT_9300_TCP_ADDR=${ES_PORT_9300_TCP_ADDR:-127.0.0.1}
+
+REDIS_PORT_6379_TCP_PORT=${REDIS_PORT_6379_TCP_PORT:-6379}
+REDIS_PORT_6379_TCP_ADDR=${REDIS_PORT_6379_TCP_ADDR:-127.0.0.1}
+
+PWD=`pwd`
+
+mustache < "conf/$1.tmpl" > $1
+java -jar ./logstash.jar agent -f $1
