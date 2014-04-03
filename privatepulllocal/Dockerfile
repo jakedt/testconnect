@@ -1,3 +1,2 @@
-FROM ci.devtable.com:5000/quay/kibana
-
+FROM ci.devtable.com:5000/devtable/complex
 RUN ls
