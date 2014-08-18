@@ -1,2 +1,2 @@
-FROM ci.devtable.com:5000/devtable/complex
+FROM localhost:5000/buynlarge/complex
 RUN ls
